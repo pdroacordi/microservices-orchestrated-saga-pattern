@@ -15,3 +15,18 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+      bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+      topic:
+        orchestrator: orchestrator
+        inventory-success: inventory-success
+        inventory-fail: inventory-fail
+      consumer:
+        group-id: inventory-validation-group
+        auto-offset-reset: latest
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF
