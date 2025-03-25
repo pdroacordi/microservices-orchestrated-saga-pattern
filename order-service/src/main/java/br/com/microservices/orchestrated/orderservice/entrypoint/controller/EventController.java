@@ -19,8 +19,8 @@ public class EventController {
     private final EventService eventService;
 
     @GetMapping("/search")
-    public Event findByFilters(@RequestParam(name = "orderId") String orderId,
-                               @RequestParam(name = "transactionId") String transactionId) {
+    public Event findByFilters(@RequestParam(name = "orderId", required = false) String orderId,
+                               @RequestParam(name = "transactionId", required = false) String transactionId) {
         var filters = EventFilters.builder()
                 .orderId(orderId)
                 .transactionId(transactionId)
