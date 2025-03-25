@@ -1,6 +1,5 @@
 package br.com.microservices.orchestrated.productvalidationservice.entrypoint.dto;
 
-import br.com.microservices.orchestrated.orchestratorservice.entrypoint.dto.OrderProducts;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
