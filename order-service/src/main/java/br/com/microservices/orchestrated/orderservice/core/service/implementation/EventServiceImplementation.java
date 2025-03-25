@@ -56,13 +56,13 @@ public class EventServiceImplementation implements EventService {
 
     private Event findByOrderId(String orderId) {
         return repository
-                .findById(orderId)
+                .findTop1ByOrderIdOrderByCreatedAtDesc(orderId)
                 .orElseThrow(() -> new NoSuchElementException("Event not found by orderID"));
     }
 
     private Event findByTransactionId(String orderId) {
         return repository
-                .findById(orderId)
+                .findTop1ByTransactionIdOrderByCreatedAtDesc(orderId)
                 .orElseThrow(() -> new NoSuchElementException("Event not found by transactionID"));
     }
 
